@@ -1,69 +1,37 @@
-import crypto from "crypto"; // Corrigido: para usar randomUUID
+export class Servico {
+    constructor(
+        private id: string,
+        private nome: string,
+        private email: string,
+        private senha: number
+    ) {
+        if (!nome) throw new Error("nome obrigatório");
+        if (!email) throw new Error("email obrigatório");
+        if (senha == undefined || senha == null) throw new Error("senha obrigatória");
 
-export class Usuario {
-  private id: string;
-  private nome: string;
-  private telefone: string;
-  private email: string;
-  private senha: string;
-  private idade?: number;
+        if (nome.length < 3) throw new Error("nome muito curto");
+        if (senha < 6) throw new Error("senha muito curta");
+        if (!email.includes("@")) throw new Error("email inválido");
+        }
 
-  constructor(
-    id: string,
-    nome: string,
-    telefone: string,
-    email: string,
-    senha: string,
-    idade?: number
-  ) {
-    if (!nome) throw new Error("nome obrigatório");
-    if (!telefone) throw new Error("telefone obrigatório");
-    if (!email) throw new Error("email obrigatório");
-    if (!senha) throw new Error("senha obrigatória");
+    static create(nome: string, email: string, senha: number) {
+        const id = crypto.randomUUID();
+        return new Servico(id, nome, email, senha);        
+    }
 
-    if (nome.length < 3) throw new Error("nome muito curto");
-    if (senha.length < 6) throw new Error("senha muito curta");
+    getID(): string {
+        return this.id;
+    }
 
-    this.id = id;
-    this.nome = nome;
-    this.telefone = telefone;
-    this.email = email;
-    this.senha = senha;
-    this.idade = idade;
-  }
+    getNome(): string {
+        return this.nome;
+    }
 
-  static create(
-    nome: string,
-    telefone: string,
-    email: string,
-    senha: string,
-    idade?: number
-  ) {
-    const id = crypto.randomUUID(); // Corrigido: randomUUID()
-    return new Usuario(id, nome, telefone, email, senha, idade);
-  }
+    getEmail(): string {
+        return this.email;
+    }
 
-  getID(): string {
-    return this.id;
-  }
-
-  getNome(): string {
-    return this.nome;
-  }
-
-  getTelefone(): string {
-    return this.telefone;
-  }
-
-  getIdade(): number | undefined {
-    return this.idade;
-  }
-
-  getEmail(): string {
-    return this.email;
-  }
-
-  getSenha(): string {
-    return this.senha;
-  }
-}
+        getSenha(): string | undefined {
+            return this.senha?.toString();
+        }
+    }
