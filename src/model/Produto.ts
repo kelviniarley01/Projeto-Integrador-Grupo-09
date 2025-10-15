@@ -1,42 +1,52 @@
-export class Usuario {
-  private nome: string;
-  private email: string;
-  private senha?: string;
+export class Produto {
+  private id_produto: number;
+  private nome_produto: string;
+  private descricao: string;
+  private medidas: string;
+  private cor: string;
+  private preco: number;
+  private quantidade_estoque: number; 
+  private fotos: string[];
 
   constructor(
-    nome: string,
-    email: string,
-    senha: string,
-
+    id_produto: number,
+    nome_produto: string,
+    descricao: string,
+    medidas: string,
+    cor: string,
+    preco: number,
+    quantidade_estoque: number,
+    fotos: string[]
   ) {
-    if (!nome) throw new Error("nome obrigatório");
-    if (!email) throw new Error("email obrigatório");
-    if (!senha) throw new Error("senha obrigatória");
-
-    if (nome.length < 3) throw new Error("nome muito curto");
-    if (senha.length < 6) throw new Error("senha muito curta");
-
-    this.nome = nome;
-    this.email = email;
-    this.senha = senha;
+    this.id_produto = id_produto;
+    this.nome_produto = nome_produto;
+    this.descricao = descricao;
+    this.medidas = medidas;
+    this.cor = cor;
+    this.preco = preco;
+    this.quantidade_estoque = quantidade_estoque;
+    this.fotos = fotos;
   }
 
   static create(
-    nome: string,
-    email: string,
-    senha: string
+    id_produto: number,
+    nome_produto: string,
+    descricao: string,
+    medidas: string,
+    cor: string,
+    preco: number,
+    quantidade_estoque: number,
+    fotos: string[]
   ) {
-  }
-
-  getNome(): string {
-    return this.nome;
-  }
-
-  getEmail(): string {
-    return this.email;
-  }
-
-  getSenha(): string | undefined {
-    return this.senha;
+    return new Produto(
+      id_produto,
+      nome_produto,
+      descricao,
+      medidas,
+      cor,
+      preco,
+      quantidade_estoque,
+      fotos
+    );
   }
 }

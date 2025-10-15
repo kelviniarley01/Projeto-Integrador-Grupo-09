@@ -11,12 +11,14 @@ export class Usuario {
 
         if (nome.length < 3) throw new Error("nome muito curto");
         if (senha < 6) throw new Error("senha muito curta");
-        if (!email.includes("@")) throw new Error("email inválido");
         }
 
-    static create(nome: string, email: string, senha: number) {
+    static create(
+        nome: string,
+        email: string,
+        senha: number) {
         const id = crypto.randomUUID();
-        return new Servico(id, nome, email, senha);        
+        return new Usuario(id, nome, email, senha);        
     }
 
     getID(): string {

@@ -15,3 +15,24 @@ export class Carrinho {
             throw new Error("Carrinho deve conter ao menos um produto");
     }
 }
+
+    static create(
+        id_carrinho: string,
+        id_usuario: string,
+        lista_produtos: Produto[],
+        quantidade: number,
+        valor_total: number,
+        data_compra: Date,
+        status_pedido: string
+    ) {
+        return new Carrinho(
+            id_carrinho,
+            id_usuario,
+            lista_produtos,
+            quantidade,
+            valor_total,
+            data_compra,
+            status_pedido
+        );
+    }
+}   
