@@ -1,33 +1,16 @@
 {
+  "files": [],
+  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
   "compilerOptions": {
-    /* Módulos e Target (ESMÁVEL) */
-    
-    // Define a versão do JavaScript de saída. ES2017 (ou ES2020) é essencial para 'async/await'.
-    "target": "ES2020", 
-    
-    // Define o sistema de módulos (commonjs é o padrão para Node.js).
-    "module": "commonjs", 
-    
-    // Inclui definições de bibliotecas globais para Map, Promise, etc.
-    // 'ES2020' cobre tudo o que você precisa. 'DOM' é opcional se for 100% back-end.
-    "lib": ["ES2020", "DOM"], 
-    
-    // Resolve problemas de compatibilidade de importação entre diferentes módulos.
-    "esModuleInterop": true,
-    
-    // Define onde procurar os arquivos TypeScript (`./src`) e onde salvar os arquivos compilados (`./dist`).
-    "rootDir": "./src", 
-    "outDir": "./dist",
-    
-    /* Regras de Tipagem e Rigor */
-
-    // Ativa todas as verificações de tipo estrito (boas práticas).
-    "strict": true,
-    
-    // Garante que a capitalização de nomes de arquivos seja consistente (importante no Linux).
-    "forceConsistentCasingInFileNames": true,
-
-    // Permite compilar arquivos mesmo se houver erros em arquivos de declaração (`.d.ts`).
-    "skipLibCheck": true 
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "noImplicitAny": false,
+    "noUnusedParameters": false,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "noUnusedLocals": false,
+    "strictNullChecks": false
   }
 }
