@@ -234,23 +234,7 @@ export const products: Product[] = [
 
     ]
   },
-  {
-    id: 11,
-    name: "Top Esportivo Soft Active na cor Berry Fever",
-    price: 103.00,
-    image: topVinho,
-    images: [topVinho],
-    color: "#7A0C2E",
-    colorName: "vinho",
-    description: "Conheça o seu novo top esportivo favorito. Desenvolvido para oferecer suporte leve e confeccionado com o nosso tecido exclusivo Soft Active, que possui propriedades de absorção de umidade e elasticidade, ele foi projetado com uma faixa inferior sem costuras para garantir conforto sem restrições. O modelo conta com alças largas e um recorte em formato de coração nas costas, preso por duplas alças cruzadas.",
-    details: [
-      "Top esportivo soft Active de suporte leve",
-      "Decote em V",
-      "Alças largas fixas",
-      "Comprimento padrão de top esportivo: aprox. 14,4 cm (baseado no tamanho P)",
-      "Tecido Soft Active leve, respirável e elástico (68% Poliéster, 32% Elastano)"
-    ]
-  },
+  
   {
     id: 12,
     name: "Macacão Soft Active na cor Vanilla Dream",
