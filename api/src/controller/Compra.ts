@@ -12,11 +12,11 @@ export class CompraController {
   }
 
   private initializeRoutes() {
-    this.router.get("/compras", this.listarCompras.bind(this));
-    this.router.post("/compras", this.criarCompra.bind(this));
-    this.router.get("/compras/:id", this.obterCompraPorId.bind(this));
-    this.router.put("/compras/:id", this.editarCompra.bind(this));
-    this.router.delete("/compras/:id", this.deletarCompra.bind(this));
+    this.router.get("/api/compras", this.listarCompras.bind(this));
+    this.router.post("/api/compras", this.criarCompra.bind(this));
+    this.router.get("/api/compras/:id", this.obterCompraPorId.bind(this));
+    this.router.put("/api/compras/:id", this.editarCompra.bind(this));
+    this.router.delete("/api/compras/:id", this.deletarCompra.bind(this));
   }
 
   private listarCompras(req: Request, res: Response) {

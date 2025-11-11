@@ -117,20 +117,14 @@ const FAQ = () => {
               Ainda tem dúvidas?
             </h3>
             <p className="text-foreground/80 mb-6">
-              Nossa equipe está pronta para te ajudar!
+        mande sua duvida para esse email:ufitness640@gmail.com
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="default" size="lg">
-                WhatsApp
-              </Button>
-              <Button variant="outline" size="lg">
-                Email
-              </Button>
+
             </div>
           </div>
         </div>
       </div>
-    </div>
+    
   );
 };
 

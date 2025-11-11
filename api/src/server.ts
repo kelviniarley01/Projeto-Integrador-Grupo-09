@@ -3,7 +3,7 @@ import cors from "cors";
 import { CompraController } from "./controller/Compra";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3009;
 
 // Middlewares
 app.use(cors());
